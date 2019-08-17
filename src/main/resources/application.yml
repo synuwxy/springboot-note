@@ -6,7 +6,7 @@ spring:
   application:
     name: synuwxy-springboot-note
 
-# jaeger 的配置
+# jaeger 配置
 opentracing:
   jaeger:
     udp-sender:

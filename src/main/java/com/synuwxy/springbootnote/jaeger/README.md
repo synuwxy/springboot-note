@@ -43,3 +43,13 @@ private方法观测不到的解决方法:
 ``` java
  AopContext.currentProxy() != null ? (类名)AopContext.currentProxy() : this;
 ```
+
+### 使用方法
+
+1. 修改启动类SpringbootNoteApplication的ServletComponentScan注解范围
+```
+@ServletComponentScan("com.synuwxy.springbootnote.jaeger")
+```
+2. 在application.yml的 **jaeger 的配置** 中添加host为自己jaeger服务端的地址
+
+3. 启动 
