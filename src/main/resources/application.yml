@@ -1,0 +1,17 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: synuwxy-springboot-note
+
+# jaeger 的配置
+opentracing:
+  jaeger:
+    udp-sender:
+      port: 6831
+      host: #这里填写jaeger服务端的ip
+    log-spans: false
+    aop:
+      status: true
