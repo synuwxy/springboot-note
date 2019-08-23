@@ -11,21 +11,28 @@ spring:
       username: root
       password: 123456 #填写自己数据库的密码
       web-stat-filter:
-        enabled: true
+        enabled: true # 启用StatFilter默认值
       stat-view-servlet:
-        enabled: true
-        login-username: root
-        login-password: 123456
+        enabled: true # 打开druid内置页面
+        login-username: root #设置登录用户名
+        login-password: 123456 #设置登录密码
+      aop-patterns: com.synuwxy.springbootnote.mybatis.web.dao.* #监控范围,aop方式
+      filter:
+        stat:
+          enabled: true #过滤器打开
+          log-slow-sql: true #是否监控sql
+          db-type: mysql # 数据库类型
+
 
 # jaeger 配置
 opentracing:
   jaeger:
     udp-sender:
       port: 6831
-      host: #这里填写jaeger服务端的ip
+      host: localhost #这里填写jaeger服务端的ip
     log-spans: false
     aop:
-      status: true
+      status: false
 
 # mybatis 配置
 mybatis:

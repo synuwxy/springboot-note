@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
--- Host: 47.94.111.0    Database: mybatis_generator_demo
+-- Host:     Database: mybatis_generator_demo
 -- ------------------------------------------------------
 -- Server version	8.0.17
 

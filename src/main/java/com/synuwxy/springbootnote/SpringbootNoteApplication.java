@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * springboot 启动类
  */
 @ServletComponentScan("com.synuwxy.springbootnote.mybatis")
+@ComponentScan("com.synuwxy.springbootnote.mybatis")
 @SpringBootApplication
 public class SpringbootNoteApplication {
 
