@@ -67,7 +67,9 @@ mybatis:
   mapper-locations: # xml存放位置
 ```
 
-3. 
+3. 启动使用
+
+
 ## mybatis-generator
 
 mybatis 自动生成实体类,sql和mapper的工具
