@@ -7,9 +7,9 @@ spring:
     name: synuwxy-springboot-note
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/mybatis_generator_demo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+      url: jdbc:mysql://47.94.111.0:3306/mybatis_generator_demo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
       username: root
-      password: 123456 #填写自己数据库的密码
+      password: wxy6221707 #填写自己数据库的密码
       web-stat-filter:
         enabled: true # 启用StatFilter默认值
       stat-view-servlet:

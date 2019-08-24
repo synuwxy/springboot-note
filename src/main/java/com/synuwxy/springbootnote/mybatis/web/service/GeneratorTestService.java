@@ -2,6 +2,13 @@ package com.synuwxy.springbootnote.mybatis.web.service;
 
 import com.synuwxy.springbootnote.mybatis.entity.generator.UserModel;
 
+/**
+ * @author wxy
+ * create by 2019.08.24
+ *
+ * desc:
+ * mybatis-generator 增删改查接口样例
+ */
 public interface GeneratorTestService {
 
     /**
