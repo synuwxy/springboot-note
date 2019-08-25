@@ -11,6 +11,7 @@ RabbitMQ的使用需要一个服务端做转发已达到各个客户端的消息
 docker run -d --hostname my-rabbit -p 15672:15672 -p 5672:5672 --name rabbitmq -e RABBITMQ_DEFAULT_USER=username -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
 ```
 其他可配置参数详见官方在dockerhub上的说明 https://hub.docker.com/_/rabbitmq
+
 2. 本地安装管理员页面地址 http://localhost:15672
 3. 客户端连接5672端口即可
 
