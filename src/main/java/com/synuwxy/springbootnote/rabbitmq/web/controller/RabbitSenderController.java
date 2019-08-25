@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+/**
+ * @author wxy
+ * create by 2019.08.25
+ *
+ * desc:
+ * rabbitmq发送端
+ */
 @RestController
 @RequestMapping("/rabbitmq")
 public class RabbitSenderController {

@@ -4,7 +4,13 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
+/**
+ * @author wxy
+ * create by 2019.08.25
+ *
+ * desc:
+ * rabbitmq 配置类,主要用于配置全局参数,定义队列或交换机等
+ */
 @Configuration
 public class RabbitmqConfig {
 

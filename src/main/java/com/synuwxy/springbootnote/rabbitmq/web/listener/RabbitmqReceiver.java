@@ -5,6 +5,13 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author wxy
+ * create by 2019.08.25
+ *
+ * desc:
+ * rabbitmq监听
+ */
 @RabbitListener(queues = RabbitmqConfig.QUEUE_NAME_QUEUE1)
 @Component
 public class RabbitmqReceiver {
