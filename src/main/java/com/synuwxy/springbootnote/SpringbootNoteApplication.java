@@ -18,8 +18,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 // swagger2 启动默认配置
 @EnableSwagger2Doc
 // 扫描包的位置,不想用其他功能的时候,限制扫描范围
-@ServletComponentScan("com.synuwxy.springbootnote.jaeger")
-@ComponentScan("com.synuwxy.springbootnote.jaeger")
+@ServletComponentScan("com.synuwxy.springbootnote.rabbitmq")
+@ComponentScan("com.synuwxy.springbootnote.rabbitmq")
 @SpringBootApplication
 public class SpringbootNoteApplication {
 
