@@ -25,4 +25,4 @@
 * jaeger
 * mybatis & mybatis-generator & druid 
 * swagger2
-*  RabbitMQ
+* RabbitMQ
