@@ -32,7 +32,7 @@ public class JaegerController {
      * @return json
      */
     @GetMapping("/build/span")
-    public Map jaegerBuildSpanTest() {
+    public Map<String, Object> jaegerBuildSpanTest() {
         return jaegerService.jaegerBuildSpanTest();
     }
 
@@ -41,7 +41,7 @@ public class JaegerController {
      * @return json
      */
     @GetMapping("/scope")
-    public Map jaegerScopeTest() {
+    public Map<String, Object> jaegerScopeTest() {
         return jaegerService.jaegerScopeTest();
     }
 
@@ -50,7 +50,7 @@ public class JaegerController {
      * @return json
      */
     @GetMapping("/log")
-    public Map jaegerLogTest() {
+    public Map<String, Object> jaegerLogTest() {
         return jaegerService.jaegerLogTest();
     }
 
@@ -59,7 +59,7 @@ public class JaegerController {
      * @return json
      */
     @GetMapping("/aop")
-    public Map jaegerAopTest() {
+    public Map<String, Object> jaegerAopTest() {
         return jaegerService.jaegerAopTest();
     }
 
@@ -69,7 +69,7 @@ public class JaegerController {
      */
     @JaegerAutoSend
     @GetMapping("/annotation")
-    public Map jaegerAnnotationTest() {
+    public Map<String, Object> jaegerAnnotationTest() {
         return jaegerService.jaegerAnnotationTest();
     }
 }

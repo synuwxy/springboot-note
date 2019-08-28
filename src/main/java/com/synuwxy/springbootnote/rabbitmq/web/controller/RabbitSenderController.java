@@ -25,13 +25,27 @@ public class RabbitSenderController {
 
     private final AmqpTemplate rabbitmqTemplate;
 
+    @Autowired
     public RabbitSenderController(AmqpTemplate rabbitmqTemplate) {
         this.rabbitmqTemplate = rabbitmqTemplate;
     }
 
-    @GetMapping("/send")
-    public Map<String, Object> sendMessage(@RequestParam("msg") String msg) {
+    @GetMapping("/default")
+    public Map<String, Object> defaultSendMessage(@RequestParam("msg") String msg) {
         rabbitmqTemplate.convertAndSend(RabbitmqConfig.DEFAULT_QUEUE,msg);
+        return ResultObject.newInstance(ResultCode.SUCCESS,msg);
+    }
+
+    @GetMapping("/topic")
+    public Map<String, Object> topicSendMessage(@RequestParam("msg") String msg, String routingKey) {
+        rabbitmqTemplate.convertAndSend(RabbitmqConfig.TOPICEXCHANGE, routingKey, msg);
+        return ResultObject.newInstance(ResultCode.SUCCESS,msg);
+    }
+
+    @GetMapping("/fanout")
+    public Map<String, Object> sendMessage(@RequestParam("msg") String msg) {
+        String routingKey = "";
+        rabbitmqTemplate.convertAndSend(RabbitmqConfig.FANOUTEXCHANGE,routingKey,msg);
         return ResultObject.newInstance(ResultCode.SUCCESS,msg);
     }
 }

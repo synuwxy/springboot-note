@@ -60,14 +60,14 @@ public class RabbitmqConfig {
         return new Queue(RabbitmqConfig.FANOUT_QUEUE_3);
     }
 
-    public final String TOPIC_ROUTINGKEY_1 = "topic.routingKey";
-    public final String TOPIC_ROUTINGKEY_ALL = "topic.#";
+    public static final String TOPIC_ROUTINGKEY_1 = "topic.routingKey";
+    public static final String TOPIC_ROUTINGKEY_ALL = "topic.#";
 
     // Topic交换机
-    public final String TOPICEXCHANGE = "topicExchange";
+    public static final String TOPICEXCHANGE = "topicExchange";
 
     // Fanout交换机
-    public final String FANOUTEXCHANGE = "fanoutExchange";
+    public static final String FANOUTEXCHANGE = "fanoutExchange";
 
     /**
      * Topic交换机注册 Topic交换机可以使得通信双方使用 routingKey 进行消息传递
