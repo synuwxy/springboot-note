@@ -31,7 +31,7 @@ public class RabbitSenderController {
 
     @GetMapping("/send")
     public Map<String, Object> sendMessage(@RequestParam("msg") String msg) {
-        rabbitmqTemplate.convertAndSend(RabbitmqConfig.QUEUE_NAME_QUEUE1,msg);
+        rabbitmqTemplate.convertAndSend(RabbitmqConfig.DEFAULT_QUEUE,msg);
         return ResultObject.newInstance(ResultCode.SUCCESS,msg);
     }
 }

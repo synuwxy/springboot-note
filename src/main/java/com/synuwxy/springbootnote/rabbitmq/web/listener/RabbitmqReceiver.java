@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
  * desc:
  * rabbitmq监听
  */
-@RabbitListener(queues = RabbitmqConfig.QUEUE_NAME_QUEUE1)
+@RabbitListener(queues = RabbitmqConfig.DEFAULT_QUEUE)
 @Component
 public class RabbitmqReceiver {
 
     @RabbitHandler
     public void receive(String msg) {
-        System.out.println("来自于队列 " + RabbitmqConfig.QUEUE_NAME_QUEUE1 + " 的消息是: " + msg);
+        System.out.println("来自于队列 " + RabbitmqConfig.DEFAULT_QUEUE + " 的消息是: " + msg);
     }
 }
