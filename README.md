@@ -7,6 +7,8 @@
 * 记录使用体验
 * 方便抄代码
 
+> 各组件及样例使用说明在 **对应的包/README.md** 文件中
+
 目录结构
 
 ```
@@ -23,6 +25,7 @@
 ### 框架 & 中间件
 
 * jaeger
-* mybatis & mybatis-generator & druid 
+* mybatis & mybatis-generator & druid & mysql
 * swagger2
 * RabbitMQ
+* JPA & H2
