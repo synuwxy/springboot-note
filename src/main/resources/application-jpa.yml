@@ -1,0 +1,15 @@
+# jpa + h2 配置
+spring:
+  datasource:
+#    url: jdbc:h2:./data/db;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:db
+    username: root # 数据库用户名
+    password: 123456 # 数据库密码
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true # h2管理端访问
+      path: /h2-console # 访问地址默认 http://localhost:8080/h2-console

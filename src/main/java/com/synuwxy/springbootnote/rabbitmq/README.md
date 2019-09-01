@@ -22,5 +22,22 @@ docker run -d --hostname my-rabbit -p 15672:15672 -p 5672:5672 --name rabbitmq -
 @ServletComponentScan("com.synuwxy.springbootnote.rabbitmq")
 @ComponentScan("com.synuwxy.springbootnote.rabbitmq")
 ```
-2. 在application.yml配置rabbitmq服务端地址
-3. 启动,访问接口在 ./controller 中
+2. 在application.yml中配置启用 rabbitmq 配置
+```yaml
+spring:
+  application:
+    name: synuwxy-springboot-note
+  profiles:
+    active: rabbitmq # 指定当前使用哪个配置文件
+```
+3. 在application-rabbitmq.yml配置rabbitmq服务端地址
+```yaml
+# rabbitmq 配置
+spring:
+  rabbitmq:
+    host:  # rabbitmq 服务端IP
+    username:  # 用户名
+    password:  # 密码
+    port: 5672 # 端口 默认5672
+```
+4. 启动,访问接口在 ./controller 中

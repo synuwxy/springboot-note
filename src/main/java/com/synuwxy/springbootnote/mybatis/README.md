@@ -9,9 +9,37 @@
 @ServletComponentScan("com.synuwxy.springbootnote.mybatis")
 @ComponentScan("com.synuwxy.springbootnote.mybatis")
 ```
-2. 修改application.yml中 **spring.datasource** 下的数据库信息为自己的数据库信息
-3. 导入resource/mybatis/sql/中的sql文件,检查数据库名称与application.yml配置是否一致
-4. 启动
+2. 在application.yml中配置启用 mybatis 配置
+```yaml
+spring:
+  application:
+    name: synuwxy-springboot-note
+  profiles:
+    active: mybatis # 指定当前使用哪个配置文件
+```
+3. 修改application.yml中 **spring.datasource** 下的数据库信息为自己的数据库信息
+```yaml
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/mybatis_generator_demo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456 # 填写自己数据库的密码
+      web-stat-filter:
+        enabled: true # 启用StatFilter默认值
+      stat-view-servlet:
+        enabled: true # 打开druid内置页面
+        login-username: root #设置登录用户名
+        login-password: 123456 #设置登录密码
+      aop-patterns: com.synuwxy.springbootnote.mybatis.web.dao.* #监控范围,aop方式
+      filter:
+        stat:
+          enabled: true #过滤器打开
+          log-slow-sql: true #是否监控sql
+          db-type: mysql # 数据库类型
+```
+4. 导入resource/mybatis/sql/中的sql文件,检查数据库名称与application.yml配置是否一致
+5. 启动,访问接口在 ./controller 中
 
 ### mybatis使用方法
 

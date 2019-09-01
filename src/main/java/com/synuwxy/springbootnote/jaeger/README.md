@@ -51,6 +51,24 @@ private方法观测不到的解决方法:
 @ServletComponentScan("com.synuwxy.springbootnote.jaeger")
 @ComponentScan("com.synuwxy.springbootnote.jaeger")
 ```
+2. 在application.yml中配置启用 jaeger 配置
+```yaml
+spring:
+  application:
+    name: synuwxy-springboot-note
+  profiles:
+    active: jaeger # 指定当前使用哪个配置文件
+```
 2. 在application.yml的 **jaeger 的配置** 中添加host为自己jaeger服务端的地址
-
-3. 启动 
+```yaml
+# jaeger 配置
+opentracing:
+  jaeger:
+    udp-sender:
+      port: 6831
+      host: localhost #这里填写jaeger服务端的ip
+    log-spans: false
+    aop:
+      status: false
+```
+3. 启动,访问接口在 ./controller 中

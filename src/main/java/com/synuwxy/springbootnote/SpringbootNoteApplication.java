@@ -16,8 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
 // swagger2 启动默认配置
 @EnableSwagger2Doc
 // 扫描包的位置,不想用其他功能的时候,限制扫描范围
-@ServletComponentScan("com.synuwxy.springbootnote.rabbitmq")
-@ComponentScan("com.synuwxy.springbootnote.rabbitmq")
+@ServletComponentScan("com.synuwxy.springbootnote.jpa")
+@ComponentScan("com.synuwxy.springbootnote.jpa")
 @SpringBootApplication
 public class SpringbootNoteApplication {
 

@@ -1,51 +1,9 @@
-
+# 公有化配置
 server:
   port: 8080
 
 spring:
   application:
     name: synuwxy-springboot-note
-
-  # 数据库相关配置
-
-  datasource:
-    druid:
-      url: jdbc:mysql://localhost:3306/mybatis_generator_demo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
-      username: root
-      password: 123456 #填写自己数据库的密码
-      web-stat-filter:
-        enabled: true # 启用StatFilter默认值
-      stat-view-servlet:
-        enabled: true # 打开druid内置页面
-        login-username: root #设置登录用户名
-        login-password: 123456 #设置登录密码
-      aop-patterns: com.synuwxy.springbootnote.mybatis.web.dao.* #监控范围,aop方式
-      filter:
-        stat:
-          enabled: true #过滤器打开
-          log-slow-sql: true #是否监控sql
-          db-type: mysql # 数据库类型
-
-  # rabbitmq 相关配置
-
-  rabbitmq:
-    host:  # rabbitmq 服务端IP
-    username:  # 用户名
-    password:  # 密码
-    port: 5672 # 端口 默认5672
-
-
-# jaeger 配置
-opentracing:
-  jaeger:
-    udp-sender:
-      port: 6831
-      host: localhost #这里填写jaeger服务端的ip
-    log-spans: false
-    aop:
-      status: false
-
-# mybatis 配置
-mybatis:
-  type-aliases-package: com.synuwxy.springbootnote.mybatis.entity
-  mapper-locations: classpath:mybatis/mapper/*/*.xml
+  profiles:
+    active: jpa # 指定当前使用哪个配置文件

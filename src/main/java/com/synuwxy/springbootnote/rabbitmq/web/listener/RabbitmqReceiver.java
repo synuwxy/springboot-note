@@ -1,7 +1,6 @@
 package com.synuwxy.springbootnote.rabbitmq.web.listener;
 
 import com.synuwxy.springbootnote.rabbitmq.common.config.RabbitmqConfig;
-import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
