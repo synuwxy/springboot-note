@@ -9,6 +9,7 @@
 @ServletComponentScan("com.synuwxy.springbootnote.mybatis")
 @ComponentScan("com.synuwxy.springbootnote.mybatis")
 ```
+
 2. 在application.yml中配置启用 mybatis 配置
 ```yaml
 spring:
@@ -17,6 +18,7 @@ spring:
   profiles:
     active: mybatis # 指定当前使用哪个配置文件
 ```
+
 3. 修改application.yml中 **spring.datasource** 下的数据库信息为自己的数据库信息
 ```yaml
 spring:
@@ -38,7 +40,9 @@ spring:
           log-slow-sql: true #是否监控sql
           db-type: mysql # 数据库类型
 ```
+
 4. 导入resource/mybatis/sql/中的sql文件,检查数据库名称与application.yml配置是否一致
+
 5. 启动,访问接口在 ./controller 中
 
 ### mybatis使用方法
@@ -67,8 +71,8 @@ spring:
 	<version>1.1.17</version>
 </dependency>
 ```
-2. 添加application.yml配置
 
+2. 添加application.yml配置
 ```yaml
 spring:
   datasource:
@@ -105,6 +109,7 @@ mybatis 自动生成实体类,sql和mapper的工具
 ### 使用方法
 
 idea:
+
 1. 添加依赖
 
 ```xml
@@ -141,4 +146,5 @@ idea:
 ```
 
 2. 在指定位置编写generator配置文档
+
 3. 找到idea侧栏的maven 插件列表,启动mybatis-generator插件
