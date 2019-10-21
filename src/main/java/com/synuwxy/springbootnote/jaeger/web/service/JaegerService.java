@@ -1,5 +1,8 @@
 package com.synuwxy.springbootnote.jaeger.web.service;
 
+import org.springframework.http.HttpHeaders;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 public interface JaegerService {
@@ -37,4 +40,20 @@ public interface JaegerService {
      * @return json
      */
     Map<String, Object> jaegerAnnotationTest();
+
+    /**
+     *
+     * @param operationName 操作名称
+     * @return map
+     */
+    Map<String, Object> jaegerContextTest(String operationName);
+
+    /**
+     *
+     * @param uberTraceId tranceId
+     * @param operationName 操作名称
+     * @param count 线程数
+     * @return 操作
+     */
+    String jaegerContextTransfer(String uberTraceId, String operationName, Integer count);
 }

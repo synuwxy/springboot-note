@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @author wxy
@@ -12,12 +13,15 @@ import org.springframework.context.annotation.ComponentScan;
  *
  * desc:
  * springboot 启动类
+ * ServletComponentScan 扫描包的位置,不想用其他功能的时候,限制扫描范围
+ * ComponentScan 扫描包的位置,不想用其他功能的时候,限制扫描范围
+ * EnableSwagger2Doc swagger2 启动默认配置
+ * EnableAsync 启用异步
  */
-// swagger2 启动默认配置
+@ServletComponentScan("com.synuwxy.springbootnote.jaeger")
+@ComponentScan("com.synuwxy.springbootnote.jaeger")
 @EnableSwagger2Doc
-// 扫描包的位置,不想用其他功能的时候,限制扫描范围
-@ServletComponentScan("com.synuwxy.springbootnote.jpa")
-@ComponentScan("com.synuwxy.springbootnote.jpa")
+@EnableAsync
 @SpringBootApplication
 public class SpringbootNoteApplication {
 

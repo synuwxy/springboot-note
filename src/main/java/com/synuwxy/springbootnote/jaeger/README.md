@@ -24,11 +24,12 @@ docker run -d --name jaeger \
 
 1. 性能优化,可以对接口进行时间戳打表,接口性能问题一目了然,快速定位问题
 2. 追踪不同服务间接口的调度关系(不太好用)
+3. 支持异步
 
 ### 问题
 
 1. 对代码的侵入很大
-2. 跨服务追踪不太好用
+2. 跨服务追踪不太好用,很不愿意使用这种对代码入侵这么大的东西
 
 ### 总结 
 
@@ -43,6 +44,15 @@ private方法观测不到的解决方法:
 ``` java
  AopContext.currentProxy() != null ? (类名)AopContext.currentProxy() : this;
 ```
+
+支持异步链路追踪，使用inject + extract接口 
+
+异步的追踪状态是 第一次发起的span root节点是一个全链路的状态，后面异步线程中extract的span会在ui页面上出现2次，一次是单独的状态，
+一次是在 span root 的链路下面有记录。
+
+所有后面的span生成都需要root节点的id，容器是一个map，key是写死的 "uber-trace-id"，取它的值就可以了
+
+这个id在不同的线程中传递就可以实现异步的链路追踪
 
 ### 使用方法
 

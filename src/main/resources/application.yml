@@ -6,4 +6,4 @@ spring:
   application:
     name: synuwxy-springboot-note
   profiles:
-    active: jpa # 指定当前使用哪个配置文件
+    active: jaeger # 指定当前使用哪个配置文件

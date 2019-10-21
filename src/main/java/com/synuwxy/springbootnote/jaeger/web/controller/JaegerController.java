@@ -3,10 +3,10 @@ package com.synuwxy.springbootnote.jaeger.web.controller;
 import com.synuwxy.springbootnote.jaeger.annotation.JaegerAutoSend;
 import com.synuwxy.springbootnote.jaeger.web.service.JaegerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpHeaders;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
@@ -72,4 +72,16 @@ public class JaegerController {
     public Map<String, Object> jaegerAnnotationTest() {
         return jaegerService.jaegerAnnotationTest();
     }
+
+    @GetMapping("/context")
+    public Map<String, Object> jaegerContextTest(@RequestParam("operationName") String operationName) {
+        return jaegerService.jaegerContextTest(operationName);
+    }
+
+    @GetMapping("/context/test")
+    public String jaegerContextTest(@RequestHeader("uberTraceId") String uberTraceId,@RequestParam("operationName") String operationName, Integer count) {
+        return jaegerService.jaegerContextTransfer(uberTraceId, operationName, count);
+    }
+
+
 }
