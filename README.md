@@ -29,3 +29,4 @@
 * swagger2
 * RabbitMQ
 * JPA & H2
+* redis
