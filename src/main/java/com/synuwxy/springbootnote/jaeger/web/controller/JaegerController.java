@@ -73,6 +73,11 @@ public class JaegerController {
         return jaegerService.jaegerAnnotationTest();
     }
 
+    /**
+     * span context
+     * @param operationName 操作名称
+     * @return json
+     */
     @GetMapping("/context")
     public Map<String, Object> jaegerContextTest(@RequestParam("operationName") String operationName) {
         return jaegerService.jaegerContextTest(operationName);

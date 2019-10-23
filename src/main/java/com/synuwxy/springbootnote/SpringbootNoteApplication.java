@@ -18,8 +18,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * EnableSwagger2Doc swagger2 启动默认配置
  * EnableAsync 启用异步
  */
-@ServletComponentScan("com.synuwxy.springbootnote.jaeger")
-@ComponentScan("com.synuwxy.springbootnote.jaeger")
+@ServletComponentScan("com.synuwxy.springbootnote.redis")
+@ComponentScan("com.synuwxy.springbootnote.redis")
 @EnableSwagger2Doc
 @EnableAsync
 @SpringBootApplication
