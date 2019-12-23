@@ -2,8 +2,8 @@ package com.synuwxy.springbootnote.redis.service;
 
 
 /**
-  * @author wxy
-  * create by 2019.10.24
+ * @author wxy
+ * create by 2019.10.24
  */
 public interface RedisService {
 

@@ -1,0 +1,22 @@
+syntax = "proto3";
+package hello;
+
+option java_outer_classname = "HelloProto";
+option java_package = "com.synuwxy.springbootnote.grpc";
+
+
+// The greeting service definition.
+service Say {
+    // Sends a greeting
+    rpc SayHello (HelloModel) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloModel {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+    string message = 1;
+}

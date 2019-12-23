@@ -3,16 +3,14 @@ package com.synuwxy.springbootnote.jaeger.web.controller;
 import com.synuwxy.springbootnote.jaeger.annotation.JaegerAutoSend;
 import com.synuwxy.springbootnote.jaeger.web.service.JaegerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
  * @author wxy
  * Create by 2019.08.17
- *
+ * <p>
  * desc:
  * jaeger试验controller
  */
@@ -29,6 +27,7 @@ public class JaegerController {
 
     /**
      * 向服务端发送接口信息(基本的方法)
+     *
      * @return json
      */
     @GetMapping("/build/span")
@@ -38,6 +37,7 @@ public class JaegerController {
 
     /**
      * 向服务端发送接口信息(scope方式)
+     *
      * @return json
      */
     @GetMapping("/scope")
@@ -47,6 +47,7 @@ public class JaegerController {
 
     /**
      * 向服务端发送接口信息,并附带日志
+     *
      * @return json
      */
     @GetMapping("/log")
@@ -56,6 +57,7 @@ public class JaegerController {
 
     /**
      * 使用aop的方式发送信息
+     *
      * @return json
      */
     @GetMapping("/aop")
@@ -65,6 +67,7 @@ public class JaegerController {
 
     /**
      * 使用注解的方式发送信息
+     *
      * @return json
      */
     @JaegerAutoSend
@@ -75,6 +78,7 @@ public class JaegerController {
 
     /**
      * span context
+     *
      * @param operationName 操作名称
      * @return json
      */
@@ -84,9 +88,7 @@ public class JaegerController {
     }
 
     @GetMapping("/context/test")
-    public String jaegerContextTest(@RequestHeader("uberTraceId") String uberTraceId,@RequestParam("operationName") String operationName, Integer count) {
+    public String jaegerContextTest(@RequestHeader("uberTraceId") String uberTraceId, @RequestParam("operationName") String operationName, Integer count) {
         return jaegerService.jaegerContextTransfer(uberTraceId, operationName, count);
     }
-
-
 }

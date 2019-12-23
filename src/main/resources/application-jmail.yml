@@ -1,0 +1,6 @@
+spring:
+  mail:
+    host: smtp.163.com
+    username:  # 邮箱服务器用户名
+    password:  # 邮箱服务器密码
+    default-encoding: UTF-8

@@ -25,7 +25,7 @@ public class JpaController {
 
     @GetMapping("/select")
     public Map<String, Object> selectUsers() {
-        return ResultObject.newInstance(ResultCode.SUCCESS,userService.findAll());
+        return ResultObject.newInstance(ResultCode.SUCCESS, userService.findAll());
     }
 
     @GetMapping("/add")
@@ -39,6 +39,6 @@ public class JpaController {
         user.setName(name);
         user.setUsername(username);
         user.setPassword(password);
-        return ResultObject.newInstance(ResultCode.SUCCESS,userService.save(user));
+        return ResultObject.newInstance(ResultCode.SUCCESS, userService.save(user));
     }
 }

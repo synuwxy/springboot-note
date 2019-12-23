@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * @author wxy
  * create by 2019.08.25
- *
+ * <p>
  * desc:
  * rabbitmq发送端
  */
@@ -32,20 +32,20 @@ public class RabbitSenderController {
 
     @GetMapping("/default")
     public Map<String, Object> defaultSendMessage(@RequestParam("msg") String msg) {
-        rabbitmqTemplate.convertAndSend(RabbitmqConfig.DEFAULT_QUEUE,msg);
-        return ResultObject.newInstance(ResultCode.SUCCESS,msg);
+        rabbitmqTemplate.convertAndSend(RabbitmqConfig.DEFAULT_QUEUE, msg);
+        return ResultObject.newInstance(ResultCode.SUCCESS, msg);
     }
 
     @GetMapping("/topic")
     public Map<String, Object> topicSendMessage(@RequestParam("msg") String msg, String routingKey) {
         rabbitmqTemplate.convertAndSend(RabbitmqConfig.TOPICEXCHANGE, routingKey, msg);
-        return ResultObject.newInstance(ResultCode.SUCCESS,msg);
+        return ResultObject.newInstance(ResultCode.SUCCESS, msg);
     }
 
     @GetMapping("/fanout")
-    public Map<String, Object> sendMessage(@RequestParam("msg") String msg) {
+    public Map<String, Object> fanoutSendMessage(@RequestParam("msg") String msg) {
         String routingKey = "";
-        rabbitmqTemplate.convertAndSend(RabbitmqConfig.FANOUTEXCHANGE,routingKey,msg);
-        return ResultObject.newInstance(ResultCode.SUCCESS,msg);
+        rabbitmqTemplate.convertAndSend(RabbitmqConfig.FANOUTEXCHANGE, routingKey, msg);
+        return ResultObject.newInstance(ResultCode.SUCCESS, msg);
     }
 }

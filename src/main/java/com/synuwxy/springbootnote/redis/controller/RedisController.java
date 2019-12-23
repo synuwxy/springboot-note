@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+
 /**
  * @author wxy
  * create by 2019.10.24
@@ -23,7 +24,7 @@ public class RedisController {
     }
 
     @GetMapping("/set")
-    public Map<String, Object> setData(@RequestParam("key") String key,@RequestParam("value") String value) {
+    public Map<String, Object> setData(@RequestParam("key") String key, @RequestParam("value") String value) {
         redisService.setData(key, value);
         return ResultObject.newInstance("200", "success");
     }

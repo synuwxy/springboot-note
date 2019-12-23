@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author wxy
  * create by 2019.08.25
- *
+ * <p>
  * desc:
  * rabbitmq监听
  */

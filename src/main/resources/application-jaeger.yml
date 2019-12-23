@@ -5,5 +5,9 @@ opentracing:
       port: 6831
       host: localhost #这里填写jaeger服务端的ip
     log-spans: false
-    aop:
-      status: false
+    rabbitmq:
+      enable: true
+#    aop:
+#      status: false
+    http:
+      enable: true

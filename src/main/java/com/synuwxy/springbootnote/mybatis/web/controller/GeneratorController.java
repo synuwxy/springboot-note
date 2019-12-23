@@ -12,28 +12,28 @@ import java.util.Map;
 /**
  * @author wxy
  * create by 2019.08.24
- *
+ * <p>
  * desc:
  * mybatis-generator controller
  */
 @RestController
 @RequestMapping("/generator")
-public class GeneratorTestController {
+public class GeneratorController {
 
     private final GeneratorTestService generatorTestService;
 
     @Autowired
-    public GeneratorTestController(GeneratorTestService generatorTestService) {
+    public GeneratorController(GeneratorTestService generatorTestService) {
         this.generatorTestService = generatorTestService;
     }
 
     @GetMapping("/select")
     public Map<String, Object> selectUser(@RequestParam("id") String id) {
-        return ResultObject.newInstance(ResultCode.SUCCESS,generatorTestService.select(id));
+        return ResultObject.newInstance(ResultCode.SUCCESS, generatorTestService.select(id));
     }
 
     @PutMapping("/update")
     public Map<String, Object> updateUser(@RequestBody UserModel userModel) {
-        return ResultObject.newInstance(ResultCode.SUCCESS,generatorTestService.update(userModel));
+        return ResultObject.newInstance(ResultCode.SUCCESS, generatorTestService.update(userModel));
     }
 }

@@ -3,7 +3,7 @@ package com.synuwxy.springbootnote.common;
 /**
  * @author wxy
  * create by 2019.08.17
- *
+ * <p>
  * desc:
  * 默认的返回码模板
  */

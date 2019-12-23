@@ -5,7 +5,7 @@ import com.synuwxy.springbootnote.mybatis.entity.generator.UserModel;
 /**
  * @author wxy
  * create by 2019.08.24
- *
+ * <p>
  * desc:
  * mybatis-generator 增删改查接口样例
  */
@@ -13,6 +13,7 @@ public interface GeneratorTestService {
 
     /**
      * 增
+     *
      * @param userModel user
      * @return 影响的行数
      */
@@ -20,6 +21,7 @@ public interface GeneratorTestService {
 
     /**
      * 删
+     *
      * @param id user表id
      * @return 影响的行数
      */
@@ -27,6 +29,7 @@ public interface GeneratorTestService {
 
     /**
      * 改
+     *
      * @param userModel user
      * @return 影响的行数
      */
@@ -34,6 +37,7 @@ public interface GeneratorTestService {
 
     /**
      * 根据ID查询
+     *
      * @param id user表id
      * @return user
      */

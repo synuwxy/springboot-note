@@ -1,6 +1,7 @@
 package com.synuwxy.springbootnote.jaeger.aop;
 
 import io.opentracing.Scope;
+import io.opentracing.Span;
 import io.opentracing.Tracer;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author wxy
  * Create by 2019.08.17
- *
+ * <p>
  * desc:
  * jaeger aop 配置
  */
@@ -37,6 +38,7 @@ public class JaegerAop {
     /**
      * 环绕通知 默认扫描web包下的所有方法，默认是关闭状态
      * 优先级设为 5 jaeger的全局aop的优先级应当尽量靠后
+     *
      * @param proceedingJoinPoint 切点
      * @return obj
      * @throws Throwable Exception
@@ -50,13 +52,15 @@ public class JaegerAop {
         }
         //若设置全局AOP生效,扫描所有的方法
         String methodName = proceedingJoinPoint.getSignature().getName();
-        try (Scope scope = tracer.buildSpan(methodName).startActive(true)) {
+        Span span = tracer.buildSpan(methodName).start();
+        try (Scope ignore = tracer.activateSpan(span)) {
             return proceedingJoinPoint.proceed();
         }
     }
 
     /**
      * 环绕通知 自定义注解扫描，用于使用注解发送jaeger数据
+     *
      * @param proceedingJoinPoint 切点
      * @return obj
      * @throws Throwable Exception
@@ -65,7 +69,8 @@ public class JaegerAop {
     @Around(value = "@annotation(com.synuwxy.springbootnote.jaeger.annotation.JaegerAutoSend)")
     public Object arround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String methodName = proceedingJoinPoint.getSignature().getName();
-        try (Scope scope = tracer.buildSpan(methodName).startActive(true)){
+        Span span = tracer.buildSpan(methodName).start();
+        try (Scope ignore = tracer.activateSpan(span)) {
             return proceedingJoinPoint.proceed();
         }
     }

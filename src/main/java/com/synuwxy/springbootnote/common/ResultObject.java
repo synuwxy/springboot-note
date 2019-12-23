@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * @author wxy
  * Create by 2019.08.17
- *
+ * <p>
  * desc:
  * 默认的响应数据模板
  */
@@ -19,8 +19,8 @@ public class ResultObject {
 
     public static Map<String, Object> newInstance(String code, Object data) {
         Map<String, Object> map = new HashMap<>();
-        map.put(ResultObject.CODE,code);
-        map.put(ResultObject.DATA,data);
+        map.put(ResultObject.CODE, code);
+        map.put(ResultObject.DATA, data);
         return map;
     }
 }
