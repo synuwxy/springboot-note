@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: synuwxy-springboot-note
+  mail:
+    host: smtp.qq.com
+    username: xxxxx@qq.com
+    password: xxxxx
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+mail:
+  pop3:
+    username: xxxxx@qq.com
+    password: xxxxx
+    host: pop3.mxhichina.com
+    port: 110
+    auth: true

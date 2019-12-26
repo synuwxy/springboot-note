@@ -1,7 +1,0 @@
-# rabbitmq 配置
-spring:
-  rabbitmq:
-    host:  # rabbitmq 服务端IP
-    username:  # 用户名
-    password:  # 密码
-    port: 5672 # 端口 默认5672
